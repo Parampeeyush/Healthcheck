@@ -1,0 +1,95 @@
+
+
+
+<template name="navigation">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css" />
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>
+    <nav class="navbar-default navbar-static-side" role="navigation">
+
+        <div class="sidebar-collapse">
+            <a class="close-canvas-menu">
+                <i class="fa fa-times"></i>
+            </a>
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear">
+                                <center>
+                                    <span class="block m-t-xs">
+                                        <strong class="font-bold">RESTest</strong>
+                                    </span>
+                                </center>
+
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="special_link">
+                    <a href="https://github.com/simranjitk" target="_blank">
+                        <i class="fas fa-code"></i>
+                        <span class="nav-label" data-i18n="nav.layouts">Simranjit Kamboj</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/simranjitk/restest" target="_blank">
+                        <i class="fab fa-github"></i>
+                        <span class="nav-label" data-i18n="nav.layouts">Project Page</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/simranjitk/restest/issues" target="_blank">
+                        <i class="fas fa-bug"></i>
+                        <span class="nav-label" data-i18n="nav.layouts">Issues</span>
+                    </a>
+                </li>
+                <li>
+                    <button class="add-servr" data-toggle="modal" data-target="#addServer">Click me</button>
+                </li>
+                <li>
+                    {{ #each servers }}
+                    <button style="color: #fff" class="serverName {{this.serverName}}">
+                        {{ this.serverName }}
+                    </button>
+                    {{/each}}
+                </li>
+            </ul>
+
+
+    <div class="row">
+        <div class="col-md-12">
+          <div class="modal" id="addServer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">Track API</h4>
+                </div>
+
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="formGroupExampleInput">Server Name</label>
+                      <input class="form-control" id="formGroupExampleInput" placeholder="Name">
+                    </div>
+                    <hr>
+                    
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-info" id="add" data-dismiss="modal">Add server</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+        </div>
+    </nav>
+</template>
